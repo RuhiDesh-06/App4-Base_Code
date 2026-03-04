@@ -38,27 +38,27 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <script>
 <!---copy pasting from App 3--!>
- var allergy_count = 0; //contains variable for number of answers indicating allergies
-        var cold_count = 0; //contains variable for number of answers indicating a cold
+ var covid_count = 0; //contains variable for number of answers indicating allergies
+ var flu_count = 0; //contains variable for number of answers indicating a cold
 
 
-        function allergyAdd(){
-            allergy_count = allergy_count + 1;
-		alert(allergy_count);
+        function covidAdd(){
+            covid_count = covid_count + 1;
+		alert(covid_count);
  
         }
 	    // updates variable allergy_count to increase by 1
 
-        function coldAdd(){
-            cold_count = cold_count + 1;
+        function fluAdd(){
+            flu_count = flu_count + 1;
         }
 		//updates variable cold_count to increase by 1
        
 	function getResults(){
-    	var allergyPercent = (allergy_count/4)*100 //variable to store percent chance the user has allergies
-	    var coldPercent = (cold_count/4)*100   //variable to store percent chance the user has a cold
+    	var covidPercent = (covid_count/4)*100 //variable to store percent chance the user has allergies
+	    var fluPercent = (flu_count/4)*100   //variable to store percent chance the user has a cold
 	    var resultText = document.getElementById("results"); //variable to store the result text
-	    resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent;
+	    resultText.innerHTML = "Probability it is COVID-19=" + covidPercent + "<br> Probability it is the flu =" + fluPercent;
 
 		}
         // function to produce the percent chances of allergies or a cold on the results page
@@ -92,11 +92,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <body>
 <!---copy and paste from app 3 --!>	
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Cold or Allergies?</h1>
+	<h1>COVID-19 or the flu?</h1>
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	<p>Are you feeling like you might have COVID-19 or the flu? Answer a few short questions to find out!</p>
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	
@@ -111,9 +111,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
     	<div id="content" class="w3-container">  
-        <p>Are yor eyes watery or itchy?</p>     <!-- /adding text for question 1-->
-		<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
-		<a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+        <p>Have you lost your sense of taste or smell</p>     <!-- /adding text for question 1-->
+		<a href="#two"  onclick="covidAdd();" class="w3-btn w3-black"> Yes</a>
+		<a href="#two"  onclick="fluAdd();" class="w3-btn w3-black">No</a>
 
 	</div> 
 </div>  <!-- page for first question -->	
@@ -124,9 +124,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have a fever?</p>  <!-- /adding text for question 2-->
-		<a href="#three"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
-        <a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+		<p>Do you have shortness of breath?</p>  <!-- /adding text for question 2-->
+		<a href="#three"  onclick="covidAdd();" class="w3-btn w3-black"> Yes</a>
+        <a href="#three"  onclick="fluAdd();" class="w3-btn w3-black">No</a>
 
 	</div> 
 </div>	 <!-- page for second question -->
@@ -137,9 +137,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have a sore throat?</p>  <!-- /adding text for question 3-->
-		<a href="#four"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
-        <a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+		<p>Did your symptoms start very suddenly?</p>  <!-- /adding text for question 3-->
+		<a href="#four"  onclick="fluAdd();" class="w3-btn w3-black"> Yes</a>
+        <a href="#four"  onclick="covidAdd();" class="w3-btn w3-black">No</a>
 
 	</div>
 </div>	 <!-- page for third question -->
@@ -150,9 +150,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Are your symptoms seasonal or chronic?</p>  <!-- /adding text for question 4-->
-		<a href="#final" onclick="allergyAdd(); getResults();" class="w3-btn w3-black"> Yes</a>
-        <a href="#final" onclick="coldAdd(); getResults();" class="w3-btn w3-black">No</a>
+		<p>Do you have a dry persistent cough?</p>  <!-- /adding text for question 4-->
+		<a href="#final" onclick="covidAdd(); getResults();" class="w3-btn w3-black"> Yes</a>
+        <a href="#final" onclick="fluAdd(); getResults();" class="w3-btn w3-black">No</a>
 
 	</div>
 </div>	 <!-- page for fourth question -->
