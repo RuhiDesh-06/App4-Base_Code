@@ -20,7 +20,7 @@ Brief Description of Goal of Code:
 The goal of this code is to make a short diagnostic app that determines if an individual has the flu or COVID-19?
  
 Known Issues:
-blah, blah, blah, blah
+Pop-ups when asking questions
 Ignore this error message if you see it using the javaScript console: Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.
 
 References:
@@ -38,8 +38,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <script>
 <!---copy pasting from App 3--!>
- var covid_count = 0; //contains variable for number of answers indicating allergies
- var flu_count = 0; //contains variable for number of answers indicating a cold
+ var covid_count = 0; //contains variable for number of answers indicating covid
+ var flu_count = 0; //contains variable for number of answers indicating the flu
 
 
         function covidAdd(){
@@ -47,12 +47,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		alert(covid_count);
  
         }
-	    // updates variable allergy_count to increase by 1
+	    // updates variable covid_count to increase by 1
 
         function fluAdd(){
             flu_count = flu_count + 1;
         }
-		//updates variable cold_count to increase by 1
+		//updates variable flu_count to increase by 1
        
 	function getResults(){
     	var covidPercent = (covid_count/4)*100 //variable to store percent chance the user has allergies
@@ -61,7 +61,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	    resultText.innerHTML = "Probability it is COVID-19=" + covidPercent + "<br> Probability it is the flu =" + fluPercent;
 
 		}
-        // function to produce the percent chances of allergies or a cold on the results page
+        // function to produce the percent chances of the flu or COVID on the results page
 
 </script>	
 
@@ -96,7 +96,7 @@ img, object{
 </style>
 
 <body>
-<!---copy and paste from app 3 --!>	
+<!---section copy and paste from app 3 --!>	
 <div id="header" class="w3-container w3-flat-carrot">
 	<h1>COVID-19 or the flu?</h1>
 </div>
@@ -112,7 +112,7 @@ img, object{
 
 	<img src="mask.jpg" alt="Description of the image">
 
-</div> <!--introductory screen -->
+</div> <!--end of introductory screen -->
 	
 <div class="page" id="one">
 	<div id="header" class="w3-container w3-flat-carrot">
@@ -125,7 +125,7 @@ img, object{
 		<a href="#two"  onclick="fluAdd();" class="w3-btn w3-black">No</a>
 
 	</div> 
-</div>  <!-- page for first question -->	
+</div>  <!-- end of page for first question -->	
 
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
@@ -138,7 +138,7 @@ img, object{
         <a href="#three"  onclick="fluAdd();" class="w3-btn w3-black">No</a>
 
 	</div> 
-</div>	 <!-- page for second question -->
+</div>	 <!-- end of page for second question -->
 
 	<div class="page" id="three">
 	<div class="w3-container w3-flat-carrot">
@@ -151,7 +151,7 @@ img, object{
         <a href="#four"  onclick="covidAdd();" class="w3-btn w3-black">No</a>
 
 	</div>
-</div>	 <!-- page for third question -->
+</div>	 <!-- end of page for third question -->
 
 	<div class="page" id="four">
 	<div class="w3-container w3-flat-carrot">
@@ -164,7 +164,7 @@ img, object{
         <a href="#final" onclick="fluAdd(); getResults();" class="w3-btn w3-black">No</a>
 
 	</div>
-</div>	 <!-- page for fourth question -->
+</div>	 <!-- end of page for fourth question -->
 
 <div class="page" id="final">
 	<div class="w3-container w3-flat-carrot">
@@ -175,7 +175,7 @@ img, object{
 		<p id="results"> </p> <!-- /adding text  to display results-->
 		
 	</div>
-</div>  <!-- page for results of questionaire -->
+</div>  <!-- end of  page for results of questionaire -->
 
 
 	
